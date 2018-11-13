@@ -16,21 +16,22 @@ function buildMetadata(sample) {
     
     //extract WashFrequency and return degree based on wash frequency
     var washFreq = response.WFREQ
-    if (washFreq <1) {var degrees = 180-0}
-    else if (washFreq <2) {var degrees = 180-20}
-    else if (washFreq <3) {var degrees = 180- 40}
-    else if (washFreq <4) {var degrees = 180- 60}
-    else if (washFreq <5) {var degrees = 180- 80}
-    else if (washFreq <6) {var degrees = 180- 100}
-    else if (washFreq <7) {var degrees = 180- 120}
-    else if (washFreq <8) {var degrees = 180- 140}
-    else if (washFreq <9) {var degrees = 180- 160}
-    else {var degrees = 180- 180};
+    if (washFreq <1) {var degrees = 0}
+    else if (washFreq <2) {var level = 20}
+    else if (washFreq <3) {var level = 40}
+    else if (washFreq <4) {var level = 60}
+    else if (washFreq <5) {var level = 80}
+    else if (washFreq <6) {var level = 100}
+    else if (washFreq <7) {var level = 120}
+    else if (washFreq <8) {var level = 140}
+    else if (washFreq <9) {var level = 160}
+    else {var level = 180};
 
 
 
     // Trig to calc meter point
-    var radius = .5;
+    var degrees = 180-level,
+        radius = .5;
     var radians = degrees * Math.PI / 180;
     var x = radius * Math.cos(radians);
     var y = radius * Math.sin(radians);
