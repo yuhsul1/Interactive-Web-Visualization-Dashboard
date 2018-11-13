@@ -12,7 +12,9 @@ function buildMetadata(sample) {
       
       })
     console.log(response.WFREQ)
-
+    
+    
+    //extract WashFrequency and return degree based on wash frequency
     var washFreq = response.WFREQ
     if (washFreq <1) {var degrees = 180-0}
     else if (washFreq <2) {var degrees = 180-20}
